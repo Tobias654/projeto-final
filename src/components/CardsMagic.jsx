@@ -1,15 +1,63 @@
-const CardsMagic = function(props){
-    return(
-        <div className={"cards"+ props.magic?.types[0].type.name}>
-        <span className={"id " + props.magic?.types[0].type.name}>{props.magic?.id}</span>
-        <span className={"name " + props.magic?.types[0].type.name}>{props.magic?.name}</span>
-        <ul className="list_types">
-            {props.magic?.types.map(tipo => {
-                return <li className={tipo.type.name}>{tipo.type.name}</li>
-            })}
-        </ul>
-    </div>
-);
-}
+import React from "react";
+import { StyleSheet, View, Text, ActivityIndicator, TouchableOpacity } from "react-native";
+import { Card, Image, Icon } from "react-native-elements";
 
-export default CardsMagic
+const styles = StyleSheet.create({
+  view: {
+    backgroundColor: "transparent",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    flex: 1,
+    paddingTop: 5,
+    flexDirection: "row",
+  },
+});
+
+const MtgCard = ({ item: { id, name, type, colors, setName, imageUrl }, onClick }) => {
+  const onClickImage = () => {
+    onClick && onClick({ imageUrl, color: colors[0] });
+  };
+
+  return (
+    <Card title={name} key={`card_${id}`}>
+      <View style={styles.view}>
+        <TouchableOpacity onPress={onClickImage}>
+          <Image
+            style={{ width: 223, height: 310 }}
+            PlaceholderContent={<ActivityIndicator size="small" color="#0000ff" />}
+            source={{ uri: imageUrl }}
+          />
+        </TouchableOpacity>
+        <View style={styles.text}>
+          <Text style={{ fontWeight: "bold" }}>Name: </Text>
+          <Text>{name}</Text>
+        </View>
+        <View style={styles.text}>
+          <Text style={{ fontWeight: "bold" }}>Type: </Text>
+          <Text>{type}</Text>
+        </View>
+        <View style={styles.text}>
+          <Text style={{ fontWeight: "bold" }}>Colors: </Text>
+          {colors.map((color) => (
+            <Icon
+              type="font-awesome"
+              name="circle"
+              size={17}
+              color={color.toLowerCase()}
+              iconStyle={{ padding: 1 }}
+              key={`color_icon__${id}_${Math.random()}`}
+            />
+          ))}
+        </View>
+        <View style={styles.text}>
+          <Text style={{ fontWeight: "bold" }}>Set name: </Text>
+          <Text>{setName}</Text>
+        </View>
+      </View>
+    </Card>
+  );
+};
+
+export default MtgCard;
