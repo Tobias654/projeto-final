@@ -3,7 +3,7 @@ import CardsMagic from './components/CardsMagic'
 import api from './services/apim'
 
 function App() {
-  const [cards, setCards] = useState([])
+  const [MTGCards, setCards] = useState([])
 
 
   const getCards = async (total) => {
@@ -19,13 +19,13 @@ function App() {
       listCards.push(newCard)  
     }
 
-    setCards([...cards, ...listCards])
+    setCards([...MTGCards, ...listCards])
 
-    console.log(cards)  
+    console.log(MTGCards)  
   }
 
   useEffect(() => {
-    getCards(22)
+    getCards()
   }, [])
 
   return (
