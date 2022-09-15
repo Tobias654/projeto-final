@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const apim = axios.create({
+const api = axios.create({
     baseURL: "https://api.magicthegathering.io/v1/cards",
     
 })
 
-export default apim
+export default api

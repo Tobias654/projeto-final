@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import CardsMagic from './components/CardsMagic'
-import api from './services/apim'
+import api from './services/api'
 
 function App() {
   const [MTGCards, setCards] = useState([])
@@ -32,8 +32,8 @@ function App() {
     <div className="App container">
       <h1>Cards de Magic</h1>
       <div className="cards">
-        {MTGCards?.map(mgc => {
-          return <CardsMagic magic={mgc} />
+        {MTGCards?.map(mtg => {
+          return <CardsMagic magic={mtg} />
         })}
       </div>
     </div>
