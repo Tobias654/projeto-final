@@ -13,9 +13,9 @@ h1 {
   padding: 50px 0;
   color: #eee;
   margin: 0 0 30px;
-  background-color: rgb(255, 145, 0);
+  background-color: rgb(0, 0, 0);
   text-transform: uppercase;
-  border-bottom: 4px solid rgb(255, 255, 255);
+  border-bottom: 4px solid rgb(0, 0, 0);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -23,36 +23,6 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.card {
-  flex: 0 1 24%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  padding: 10px;
-  border: 12px solid #fff;
-}
-
-.card span {
-  display: block;
-}
-
-.card .id {
-  font-size: 1em;
-  font-weight: bold;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 10px;
-  background: #666;
-  color: #eee;
-  width: 60px;
-  border-radius: 5px;
-  margin: 10px;
-}
-
-.card.info {
-  display: none;
 }
 
 .card img {
@@ -65,70 +35,4 @@ h1 {
   margin: 20px auto;
 }
 
-.card .name {
-  font-size: 1em;
-  font-weight: bold;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 5px;
-  background: #666;
-  color: #eee;
-  text-transform: capitalize;
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
-}
-
-.card .list_types {
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  text-align: center;
-}
-
-.card .list_types li {
-  font-size: 0.6em;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 5px 10px;
-  margin: 2px;
-  color: #fff;
-  background: #000;
-  display: inline-block;
-  line-height: 0.5;
-  border-radius: 35px;
-  border: 2px solid #fff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-.R {
-  background-color: rgb(255, 0, 0) !important;
-}
-
-.Red {
-  background-color: rgb(255, 0, 0) !important;
-}
-
-.U {
-  background-color: rgb(0, 153, 255);
-}
-
-.Blue {
-  background-color: rgb(0, 153, 255);
-}
-
-.G{
-  background-color: rgb(0, 177, 0);
-}
-
-.Green{
-background-color: rgb(0, 177, 0);
-}
-
-.W{
- background-color: white; 
-}
-.White{
-  background-color: white;
-}
 

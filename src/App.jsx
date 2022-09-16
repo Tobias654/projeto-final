@@ -6,6 +6,8 @@ function App() {
 
   const [MTGCards, setCards] = useState([])
 
+  
+
 
   const getCards = async (total) => {
     const listCards = []
@@ -18,7 +20,7 @@ function App() {
 
 
       listCards.push(newCard)  
-    }
+    } 
 
     setCards([...MTGCards, ...listCards])
 
@@ -26,18 +28,22 @@ function App() {
   }
 
   useEffect(() => {
-    getCards(20)
+    getCards(25)
   }, [])
 
   return (
     <div className="App container">
-      <h1>Cards de Magic</h1>
+      <h1>Magic the gathering</h1>
+      
       <div className="cards">
       {MTGCards?.map(cards => {
           return <CardsMagic cardmtg={cards} />
         })}
+        
       </div>
+      
     </div>
+    
   )
 }
 
