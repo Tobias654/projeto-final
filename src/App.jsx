@@ -3,12 +3,13 @@ import CardsMagic from './components/CardsMagic'
 import api from './services/api'
 
 function App() {
+
   const [MTGCards, setCards] = useState([])
 
 
   const getCards = async (total) => {
     const listCards = []
-
+    
     for(let i = 1; i <= total; i++) {
       const newCard = await api
         .get(`${i.toString()}`)
@@ -25,15 +26,15 @@ function App() {
   }
 
   useEffect(() => {
-    getCards()
+    getCards(20)
   }, [])
 
   return (
     <div className="App container">
       <h1>Cards de Magic</h1>
       <div className="cards">
-        {MTGCards?.map(mtg => {
-          return <CardsMagic magic={mtg} />
+      {MTGCards?.map(cards => {
+          return <CardsMagic cardmtg={cards} />
         })}
       </div>
     </div>
